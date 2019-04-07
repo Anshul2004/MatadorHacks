@@ -1,0 +1,92 @@
+<html>
+    <body>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu|Raleway" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css_static/global_NLI.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css_static/clubs.css') }}">
+        <title>ClubHub</title>
+    </head>
+    <body>
+        <img id="background" src="{{ url_for('static', filename='images/image1.jpg') }}" height="100%" width="100%">
+        <div class="navbar">
+                <button id="link-^" onclick="linkButtons(this.id)">Home</button>
+                {% if not logged_in %}
+                    <button id="link-^/signup" onclick="linkButtons(this.id)">Sign Up</button>
+                    <button id="link-^/login" onclick="linkButtons(this.id)">Log In</button>
+                {% else %}
+                    {% if type == 'staff' %}
+                        <button id="link-^/create-club" onclick="linkButtons(this.id)">Create a Club</button>
+                    {% endif %}
+                    <button id="" class="active" onclick="linkButtons(this.id)">Clubs</button>
+                    <button>
+                        <form action="{{ url_for('logout') }}">
+                            <input id = "button" type="submit" value="Logout"></input>
+                        </form>
+                    </button>
+                    <button id="link-^/profile" onclick="linkButtons(this.id)">Profile</button>
+                {% endif %}
+            </div>
+            
+        <div class="page-content">
+            <input type="text" id="inputted"></input>
+            <button onclick="find({{ club_list }})" class="search">Search</button>
+            <div class="block">
+                    {% if clubs == None %}
+                            <div class="part1">No clubs  are present yet!</div>
+                    {% else %}
+                        <div>
+                        {% for club in club_list %}
+                            <div id="{{ clubs[club]['clubcode'] }}" class="part1" style="margin-top: 10%">
+                                <div id="row">
+                                    <div>
+                                        <div id="row">
+                                            <h3 class="header-strong">Name: </h3>
+                                            <h3>{{ clubs[club]['name'] }}</h3>
+                                        </div>
+                                        <div id="row">
+                                            <h3 class="header-strong">President: </h3>
+                                            <h3>{{ clubs[club]['president'] }}</h3> 
+                                        </div>
+                                        <div id="row">
+                                            <h3 class="header-strong">Email: </h3>
+                                            <h3>{{ clubs[club]['email'] }}</h3>
+                                        </div>
+                                        <div id="row">
+                                            <h3 class="header-strong">Advisor: </h3>
+                                            <h3>{{ clubs[club]['advisor'] }}</h3>
+                                        </div>
+                                        <div id="row">
+                                            <h3 class="header-strong">Purpose: </h3>
+                                            <h3>{{ clubs[club]['purpose'] }}</h3>
+                                        </div>
+                                        
+                                        <div style="margin-top: 10%">
+                                            <button class="hover" id="link-/{{ clubs[club]['clubcode'] }}#signup-form" onclick="linkButtons(this.id)">Apply</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        </div>
+                    {% endif %}
+    
+                </div>
+        
+            
+        </div>
+
+        <div class="footer" id="footer">
+            <a href="mailto:forevergrace.15@gmail.com" target="_blank" style = "float: left; padding-left: 10%; padding-top: 1%; padding-bottom: 1%"> 
+                <img src="{{ url_for('static', filename='images/maillogo.png') }}" style = "float: left;" 
+                 alt="Mail Icon">
+            </a>
+            
+            <a href="https://www.instagram.com" target="_blank" style = "float: right; padding-right: 20%; padding-top: 1%; padding-bottom: 1%"> 
+                <img src="{{ url_for('static', filename='images/instaglogo.png') }}" style = "float: right;" 
+                 alt="Instagram">
+            </a>
+    </div>
+        
+        <script src="{{ url_for('static', filename='js/style.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/model.js') }}"></script>
+    </body>
+</html>

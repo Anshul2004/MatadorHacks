@@ -1,0 +1,62 @@
+#background{
+    position: fixed;
+    opacity: 0.4;
+    z-index: -2;
+  }
+
+  .page-content{
+      display: flex;
+      justify-content: center;
+      margin-top: 5%;
+      margin-bottom: 10%;
+  }
+
+  #block{
+    background: white;
+    padding: 5%;
+    margin-top: 3%;
+    padding-right: 14%;
+    margin-bottom: 3%;
+  }
+
+  #block h1{
+      font-family: "Ubuntu", sans-serif;
+      color: #474747;
+      font-size: 250%;
+  }
+
+  #input{
+    border: 2px solid #474747;
+    padding: 5%;
+    font-size: 150%;
+    color: #474747;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  #block h3{
+    font-family: "Montserrat", sans-serif;
+      color: #474747;
+  }
+
+  #part2{
+    margin-left: 20%;
+    margin-top: 10%;
+  }
+
+  #submit{
+    background: transparent;
+    border: 2px solid #474747;
+    padding: 5%;
+    font-size: 150%;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 15%;
+    margin-left: 10%;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+  }
+
+ #submit:hover{
+    background-color: #cecece;
+    color: black;
+    cursor: pointer;
+  }

@@ -1,0 +1,100 @@
+#background{
+  opacity: 0.4;
+  font-size: 21px;
+  text-align: center;
+  -webkit-transition: opacity 2s ease-in;
+  -moz-transition: opacity 2s ease-in;
+  -o-transition: opacity 2s ease-in;
+  -ms-transition: opacity 2s ease-in;
+  transition: opacity 2s ease-in;
+  position: fixed;
+  z-index: -1;
+  }
+
+  
+  
+  #title-area{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10%;
+    margin-top: 5%;
+  }
+  
+  #title-area h1{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 100;
+    color: #474747;
+    font-size: 620%;
+    margin-left: -20%;
+  }
+  
+  #title-area strong{
+    font-weight: 800;
+    color: black;
+  }
+  
+  #title-area h5{
+    font-family: "Montserrat", sans-serif;
+    color: #474747;
+    font-size: 180%;
+    margin-left: -20%;
+    margin-top: -25%;
+  }
+
+  #title-area button{
+    background-color: transparent;
+    border: 2px solid #474747;
+    color: #474747;
+    padding: 2%;
+    font-size: 120%;
+    margin-left: 40%;
+    margin-top: 10%;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+  }
+  
+  #title-area button:hover{
+    cursor: pointer;
+    background-color: #efefef;
+    color: black;
+  }
+  
+  .content-box{
+    display: flex;
+    background-color: white;
+  }
+  .content-box img{
+    margin: 5%;
+    overflow: hidden;
+    width: 250%;
+    height: 250%;
+  }
+  #content-box-content{
+    margin: 5%;
+  }
+  
+  #content-box-content h1{
+    color: #474747;
+    font-family: "Montserrat", sans-serif;
+    font-size: 220%;
+  }
+  
+  #content-box-content p{
+    color: #474747;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+    line-height: 250%;
+    text-indent: 10%;
+  }
+
+  #grey{
+    background-color: #474747;
+  }
+
+  #grey h1{
+    color: #efefef;
+  }
+
+  #grey-content{
+    color: #efefef !important;
+  }

@@ -1,0 +1,91 @@
+.active {
+    margin: 0;
+    padding: 0;
+}
+
+#background {
+    z-index: -1;
+    opacity: 0.4;
+    position: fixed;
+}
+
+.block{
+    display: flex;
+    justify-content: center;
+}
+
+#row{
+    display: flex;
+    justify-content: left;
+    vertical-align: baseline;
+    margin-top: 5%;
+}
+
+.part1 button{
+    color: #474747;
+    background-color: transparent;
+    border: 2px solid #474747;
+    padding: 3%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 150%;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+}
+
+.part1{
+    background-color: white;
+    padding: 2%;
+    margin: 5%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+button:hover{
+    cursor:pointer;
+    background-color: #cecece;
+}
+
+.part1 h1{
+    color: #474747;
+    font-family: "Montserrat", sans-serif;
+}
+
+.part1 h3{
+    color: #474747;
+    font-family: "Montserrat", sans-serif;
+    margin-left: 5%;
+}
+
+.header-strong {
+    color: mediumslateblue !important;
+}
+
+#inputted{
+    background-color: white;
+    margin-left: 35%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    padding: 1%;
+}
+
+#inputted:hover{
+    cursor: auto !important;
+}
+
+.search{
+    color: #474747;
+    background-color: transparent;
+    border: 2px solid #474747;
+    padding: 1%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 150%;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+    margin-left: 5%;
+}
+
+.part1{
+    background-color: white;
+    padding: 2%;
+    margin: 5%;
+}

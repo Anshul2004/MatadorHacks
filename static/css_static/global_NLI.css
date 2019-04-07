@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar{
+  display: flex;
+  background-color: white;
+  justify-content: center;
+}
+
+.navbar button{
+  background: transparent;
+  color: #474747;
+  border: 0px;
+  font-size: 120%;
+  padding: 1% 5% 1% 5%;
+  font-family: "Montserrat", sans-serif;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.navbar button:hover{
+  background-color: #cecece;
+  color: black;
+  cursor: pointer;
+}
+
+.hover:hover{
+  background-color: #cecece;
+  color: black;
+  cursor: pointer;
+}
+
+button:focus {outline:0;}
+
+body{
+  background-color: #efefef;
+  margin: 0;
+}
+
+.active{
+  background-color: #cecece !important;
+}
+
+.footer{
+  background-color: white;
+  padding: 10%;
+  padding-top: 3% !important;
+}
+
+input{
+  background-color: transparent;
+  border: 0px;
+  font-size: 100%;
+  font-family: "Montserrat", sans-serif; 
+  color: #474747;
+  margin-top: 0%;
+}
+
+#button:hover{
+  cursor: pointer;
+}

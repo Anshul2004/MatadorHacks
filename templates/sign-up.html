@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu|Raleway" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css_static/global_NLI.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css_static/sign-up.css') }}">
+        <title>Sign Up </title>
+    </head>
+    <body>
+        <img id="background" src="https://images.unsplash.com/photo-1524126674340-63807415b0f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80" height="100%" width="100%">
+        <div class="navbar">
+            <button id="link-^" onclick="linkButtons(this.id)">Home</button>
+            {% if not logged_in %}
+                <button id="link-^/signup" onclick="linkButtons(this.id)">Sign Up</button>
+                <button id="link-^/login" onclick="linkButtons(this.id)">Log In</button>
+            {% else %}
+                {% if type == 'staff' %}
+                    <button id="link-^/create-club" onclick="linkButtons(this.id)">Create a Club</button>
+                {% endif %}
+                <button class="active" id="link-^/clubs" onclick="linkButtons(this.id)">Clubs</button>
+            {% endif %}
+        </div>
+            
+
+        <div class="page-content">
+            <div id="block">
+                <h1 >Sign Up</h1>
+                <form method='post'>
+                    <div style="display: flex">
+                        <div id="part1">
+                            {% if errors['email'] %}
+                                <h3 style="color: red;">Email already taken</h3>
+                            {% endif %}
+                            {% if errors['username'] %}
+                                <h3 style="color: red;">Username already taken</h3>
+                            {% endif %}
+                            {% if errors['school'] %}
+                                <h3 style="color: red;">School already taken</h3>
+                            {% endif %}
+                            {% if errors['total'] %}
+                                <br/>
+                            {% endif %}
+
+                            <h3>Account Type:</h3>
+                            <select name="type">
+                                <option value="student">Student</option>
+                                <option value="staff">Staff</option>
+                            </select> 
+
+                            <h3>First Name</h3>
+                            <input type="text" id="input" name="firstname" required><br><br>
+                            <h3>Last Name</h3>
+                            <input type="text" id="input" name="lastname" required><br><br>
+                            <h3>Username</h3>
+                            <input type="text" id="input" name="username" required><br><br>
+                        </div>
+                        <div id="part2">
+                            <h3>Password</h3>
+                            <input type="password" id="input" name="password" required><br><br>
+                            <h3>Email</h3>
+                            <input type="email" id="input" name="email" required><br><br>
+                            <h3>School</h3>
+                            <input type="text" id="input" name="school" required><br><br>
+                            <input type="submit" value="Submit" id="submit">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer">
+            <a href="mailto:forevergrace.15@gmail.com" target="_blank" style = "float: left; padding-left: 10%; padding-top: 1%; padding-bottom: 1%"> 
+                <img src="{{ url_for('static', filename='images/maillogo.png') }}" style = "float: left;" 
+                 alt="Mail Icon">
+            </a>
+            
+            <a href="https://www.instagram.com" target="_blank" style = "float: right; padding-right: 20%; padding-top: 1%; padding-bottom: 1%"> 
+                <img src="{{ url_for('static', filename='images/instaglogo.png') }}" style = "float: right;" 
+                 alt="Instagram">
+            </a>
+        </div>
+    
+        <script src="{{ url_for('static', filename='js/style.js') }}"></script>
+    </body>
+</html>

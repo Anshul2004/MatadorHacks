@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu|Raleway" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css_static/global_NLI.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css_static/main_home.css') }}">
+        <title>ClubHub</title>
+    </head>
+    <body>
+        <img id="background" src="{{ url_for('static', filename='images/image1.jpg') }}" height="100%" width="100%">
+        <div class="navbar">
+                <button id="" class="active" onclick="linkButtons(this.id)">Home</button>
+                {% if not logged_in %}
+                    <button id="link-signup" onclick="linkButtons(this.id)">Sign Up</button>
+                    <button id="link-login" onclick="linkButtons(this.id)">Log In</button>
+                {% else %}
+                    {% if type == 'staff' %}
+                        <button id="link-create-club" onclick="linkButtons(this.id)">Create a Club</button>
+                    {% endif %}
+                    <button id="link-clubs" onclick="linkButtons(this.id)">Clubs</button>
+                    <button>
+                        <form action="{{ url_for('logout') }}">
+                            <input id = "button" type="submit" value="Logout"></input>
+                        </form>
+                    </button>
+                    <button id="link-profile" onclick="linkButtons(this.id)">Profile</button>
+                {% endif %}
+            </div>
+
+        <div class="page-content">
+            <div id="title-area">
+                <div id="content">
+                  <img src="{{ url_for('static', filename='images/real_logo.png') }}" width="100%" height="100%">
+                  <small><h5>Welcome to ClubHub: a platform designed for all school activities and events. </h5></small>
+                  <button class="learn-more" id="link-clubs" href="#content-box-content">Learn More</button>
+                </div>
+            </div>
+            
+            <div class="content-box">
+                <img src="{{ url_for('static', filename='images/image2.jpg') }}" width="100%" height="100%">
+                <div id="content-box-content">
+                    <h1>What is ClubHub?</h1>
+                    <p>For larger schools with thousands of students, keeping track of paperwork and information related to the hundreds 
+                      of clubs on campus is no simple task. ClubHub aims to solve this problem by creating a place where students can 
+                      easily access relevant, updated information about clubs. Instead of having to register during a fixed time in a 
+                      scenario where contact information is often lost, users have the option to sign-up anytime, anyplace. Creating 
+                      an account allows them to register for a variety of clubs. As a platform combining previously separated areas 
+                      of online school resources, ClubHub will revolutionize the way schools record student participation in all related events. 
+                    </p>
+                </div>
+            </div>
+            <div class="content-box" id="grey">
+                <div id="content-box-content">
+                    <h1>Functions</h1>
+                    <p id="grey-content">ClubHub allows students to view and join the various clubs offered by specific schools.  Administrators like 
+                      teachers and staff can create new clubs instantly, simplifying the registration process. Club officers constantly 
+                      update the information displayed. Based on the hierarchy of users, ranging from super administrators to interested
+                      students, ClubHub grants different permissions and rights. At the sign up page, users are prompted to create an account
+                      storing all of their personal information related to the clubs. In addition, students have the option to be added to the 
+                      mailing list for clubs.  </p>
+                </div>
+                <img src="{{ url_for('static', filename='images/image3.jpg') }}" width="100%" height="100%">
+            </div>
+        </div>
+
+        <div class="footer">
+                <a href="mailto:forevergrace.15@gmail.com" target="_blank" style = "float: left; padding-left: 10%; padding-top: 1%; padding-bottom: 1%"> 
+                    <img src="{{ url_for('static', filename='images/maillogo.png') }}" style = "float: left;" 
+                     alt="Mail Icon">
+                </a>
+                
+                <a href="https://www.instagram.com" target="_blank" style = "float: right; padding-right: 20%; padding-top: 1%; padding-bottom: 1%"> 
+                    <img src="{{ url_for('static', filename='images/instaglogo.png') }}" style = "float: right;" 
+                     alt="Instagram">
+                </a>
+        </div>
+        
+        <script src="{{ url_for('static', filename='js/style.js') }}"></script>
+    </body>
+</html>

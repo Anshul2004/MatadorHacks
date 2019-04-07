@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu|Raleway" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css_static/global_NLI.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css_static/log-in.css') }}">
+    </head>
+
+    
+    <body>
+        <img id="background" src="{{ url_for('static', filename='images/image5.jpg') }}" height="100%" width="100%">
+        <div class="navbar">
+            <button id="link-^" onclick="linkButtons(this.id)">Home</button>
+            <button id="link-^/signup" onclick="linkButtons(this.id)">Sign Up</button>
+            <button id="link-^/login" onclick="linkButtons(this.id)">Log In</button>
+        </div>
+            
+
+        <div class="page-content">
+            <div id="block">
+                <h1 >Log In</h1>
+                {% if error %}
+                    <h3 style="color: red;">Invalid username or password</h3>
+                {% endif %}
+
+                <form method='post'>
+                    <h3>Username</h3>
+                    <input type="text" id="input" name="username" required></input><br><br>
+                    <h3>Password</h3>
+                    <input type="password" id="input" name="password" required></input><br><br>
+                    <input type="submit" value="Submit" id="submit"></input>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer">
+            <a href="mailto:forevergrace.15@gmail.com" target="_blank" style = "float: left; padding-left: 10%; padding-top: 1%; padding-bottom: 1%"> 
+                <img src="{{ url_for('static', filename='images/maillogo.png') }}" style = "float: left;" 
+                 alt="Mail Icon">
+            </a>
+            
+            <a href="https://www.instagram.com" target="_blank" style = "float: right; padding-right: 20%; padding-top: 1%; padding-bottom: 1%"> 
+                <img src="{{ url_for('static', filename='images/instaglogo.png') }}" style = "float: right;" 
+                 alt="Instagram">
+            </a>
+    </div>
+        
+        <script src="{{ url_for('static', filename='js/style.js') }}"></script>
+    </body>
+</html>
