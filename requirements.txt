@@ -64,7 +64,6 @@ requests-toolbelt==0.7.0
 
 
 pytz==2017.2
-requests==2.11.1
 requests-toolbelt==0.7.0
 rethinkdb==2.3.0.post6
 rsa==3.4.2
