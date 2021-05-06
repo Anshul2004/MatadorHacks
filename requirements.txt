@@ -7,7 +7,7 @@ Pyrebase==3.0.27
 Flask==1.0.2
 gunicorn==19.9.0
 requests==2.21.0
-flask-cors==3.0.6
+flask-cors==3.0.9
 requests-toolbelt==0.7.0
 urllib3==1.23
 virtualenv==16.0.0
