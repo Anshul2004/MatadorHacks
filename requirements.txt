@@ -9,7 +9,7 @@ gunicorn==19.9.0
 requests==2.21.0
 flask-cors==3.0.6
 requests-toolbelt==0.7.0
-urllib3==1.23
+urllib3==1.26.5
 virtualenv==16.0.0
 virtualenv-clone==0.3.0
 Werkzeug==0.14.1
